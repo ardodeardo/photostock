@@ -11,7 +11,7 @@ import configureStore from './store/index';
 import Routes from './routers/index';
 
 // -- Components
-import Layout from './components/Layout';
+import Layout from './components/shared/Layout';
 
 const { persistor, store, dispatch } = configureStore();
 // persistor.purge(); // Debug to clear persist
