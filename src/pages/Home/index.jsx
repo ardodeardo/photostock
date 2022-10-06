@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import tw, { styled, css } from 'twin.macro';
 import 'styled-components/macro';
-
-// import Routes from '../../routers/index';
+import { Link } from 'react-router-dom';
 
 // -- Components
-import Layout from '../../components/Layout';
+import Layout from '../../components/shared/Layout';
+import ModalCategories from './components/ModalCategories';
 
 const Home = () => {
   const dataSet = [
@@ -23,7 +23,7 @@ const Home = () => {
     },
   ];
 
-  const categories = [
+  const categoriesSet = [
     {
       title: 'Background',
       url: '',
@@ -44,15 +44,18 @@ const Home = () => {
       title: 'Music',
       url: '',
     },
-    {
-      title: 'More Categories',
-      url: '',
-    },
   ];
+
+  const [categories, setCategories] = useState(false);
+
+  const handleModalCategories = () => {
+    setCategories(!categories);
+  };
 
   return (
     <Layout>
-      {/* <Routes /> */}
+      {categories && <ModalCategories toggler={handleModalCategories}></ModalCategories>}
+
       <section id="searcharea">
         <SearchBoxArea>
           <Container>
@@ -73,11 +76,12 @@ const Home = () => {
               />
             </SearchBox>
             <ul tw="flex mx-auto mt-10" css={[css({ width: 'fit-content' })]}>
-              {categories.map((item) => (
+              {categoriesSet.map((item) => (
                 <List key={`list-${item.title}`}>
-                  <a href={item.url}>{item.title}</a>
+                  <Link to={`categories/${item.title}`}>{item.title}</Link>
                 </List>
               ))}
+              <List tw="cursor-pointer" onClick={() => handleModalCategories()}>More Categories</List>
             </ul>
           </Container>
         </SearchBoxArea>
@@ -90,12 +94,14 @@ const Home = () => {
               <h2 tw="font-montserrat font-semibold text-size_20x">Type Photo Stock</h2>
               <div tw="flex gap-x-10 mt-18">
                 {dataSet.map((item) => (
-                  <Thumbnail tw="relative bg-black" key={`thumb-${item.title}`}>
-                    <img src="" alt="" />
-                    <div tw="flex justify-center items-center w-full h-full absolute top-0 left-0 py-6 px-9">
-                      <h3 tw="font-worksans text-size_16x text-white">{item.title}</h3>
-                    </div>
-                  </Thumbnail>
+                  <Link to="">
+                    <Thumbnail tw="relative bg-black" key={`thumb-${item.title}`}>
+                      <img src="" alt="" />
+                      <div tw="flex justify-center items-center w-full h-full absolute top-0 left-0 py-6 px-9">
+                        <h3 tw="font-worksans text-size_16x text-white">{item.title}</h3>
+                      </div>
+                    </Thumbnail>
+                  </Link>
                 ))}
               </div>
             </div>

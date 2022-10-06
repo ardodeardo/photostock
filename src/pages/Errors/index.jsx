@@ -1,27 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import 'twin.macro';
+import tw, { styled, css } from 'twin.macro';
+import 'styled-components/macro';
 
-import { Content, Heading, Context } from './styles';
+import Layout from '../../components/shared/Layout';
 
 const Errors = () => {
   return (
-    <Content>
-      <Heading>404</Heading>
-      <Context>
-        Ups, Page not found!
-      </Context>
-
-      <div tw="flex justify-center mt-6">
-        <Link
-          tw="inline-flex text-white bg-green-700 border-0 py-2 px-6 focus:outline-none hover:bg-green-500 rounded text-lg"
-          to="/"
-        >
-          Back to Home
-        </Link>
-      </div>
-    </Content>
+    <Layout>
+      <section tw="flex justify-center items-center" css={[css({ height: '85vh' })]}>
+        <Container>
+          <div tw="text-center">
+            <h1 tw="font-montserrat font-bold text-size_32x" css={[css({ color: '#e23e57' })]}>
+              404
+            </h1>
+            <p tw="font-worksans text-size_12x" css={[css({ color: '#311d3f' })]}>
+              Page not found
+            </p>
+          </div>
+        </Container>
+      </section>
+    </Layout>
   );
 };
+
+const Container = styled.div(() => [
+  tw`w-full mx-auto`,
+  css`
+    max-width: 1640px;
+  `,
+]);
 
 export default Errors;

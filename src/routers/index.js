@@ -4,12 +4,14 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../pages/Home/index';
 import Errors from '../pages/Errors/index';
 import Login from '../pages/Login/index';
+import Collection from '../pages/Collection';
 
 
 const Index = () => (
     <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/login" exact component={Login} />
+        <Route path="/collection" exact component={Collection} />
 
         {/* 404 */}
         <Route
