@@ -24,13 +24,10 @@ function ModalProfile(props) {
           </div>
           <div tw="px-8">
             <div tw="text-center">
-              <div
-                tw="mt-5 w-20 h-20 mx-auto rounded-full"
-                css={[css({ backgroundColor: '#e23e57' })]}
-              ></div>
+              <div tw="mt-5 w-20 h-20 mx-auto rounded-full bg-brand-red"></div>
               <h2 tw="font-montserrat text-size_16x mt-5">Hi, User</h2>
               <Link to="/">
-                <Button size="sm" color="purple" tw="mt-5 w-3/4">
+                <Button color="purple" tw="mt-5 w-3/4">
                   user@gmail.com
                 </Button>
               </Link>
@@ -40,12 +37,12 @@ function ModalProfile(props) {
               css={[css({ borderTop: '1px solid #cccccc' })]}
             >
               <Link to="/collection">
-                <Button size="sm" tw="mt-10">
+                <Button tw="mt-10">
                   My Collection
                 </Button>
               </Link>
               <Link to="/signout">
-                <Button size="sm" color="white" tw="mt-10">
+                <Button color="white" tw="mt-10">
                   Sign Out
                 </Button>
               </Link>

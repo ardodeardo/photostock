@@ -9,13 +9,11 @@ import ModalProfile from '../Profile/index';
 import { Main } from './styles';
 
 const Layout = (props) => {
-
   const [modalProfile, setModalProfile] = useState(false);
 
   const handleModalProfile = () => {
     setModalProfile(!modalProfile);
   };
-
   return (
     <>
       <Helmet>

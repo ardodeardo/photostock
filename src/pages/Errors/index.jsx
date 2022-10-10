@@ -11,10 +11,10 @@ const Errors = () => {
       <section tw="flex justify-center items-center" css={[css({ height: '85vh' })]}>
         <Container>
           <div tw="text-center">
-            <h1 tw="font-montserrat font-bold text-size_32x" css={[css({ color: '#e23e57' })]}>
+            <h1 tw="font-montserrat font-bold text-size_32x text-brand-red">
               404
             </h1>
-            <p tw="font-worksans text-size_12x" css={[css({ color: '#311d3f' })]}>
+            <p tw="font-worksans text-size_12x text-brand-purple-medium">
               Page not found
             </p>
           </div>

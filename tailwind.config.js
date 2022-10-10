@@ -744,6 +744,20 @@ module.exports = {
       },
       fontSize: loopSize(1, 61, 2, 'px', 'size'),
       spacing: loopSize(0, 41, 4, 'px'),
+      colors: {
+        brand: {
+          red: '#e23e57',
+          purple: {
+            light: '#88304e',
+            medium: '#311d3f',
+            dark: '#160d1c'
+          },
+          gray: {
+            light: '#f8f8f8',
+            medium: '#cccc'
+          }
+        }
+      }
     },
   },
   variantOrder: [
@@ -882,5 +896,7 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio')
+  ],
 };

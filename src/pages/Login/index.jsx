@@ -9,9 +9,9 @@ const Login = () => {
     <Section>
       <div tw="mx-auto text-white text-center mt-22">
         <h1 tw="font-montserrat text-size_24x font-thin">
-          Photo<span css={[tw`font-bold`, css({ color: '#e23e57' })]}>Stock</span>
+          Photo<span tw="text-brand-red font-bold">Stock</span>
         </h1>
-        <p tw="font-worksans text-size_12x" css={css({ color: '#cccccc' })}>
+        <p tw="font-worksans text-size_12x text-brand-gray-medium">
           Stunning free images & royalty free stock
         </p>
       </div>
@@ -19,15 +19,15 @@ const Login = () => {
       <Wrapper>
         <div>
           <h2 tw="font-montserrat font-medium text-size_16x">Welcome to PhotoStock</h2>
-          <p tw="font-worksans font-thin text-size_10x mt-5 leading-6" css={css({ color: '#cccccc' })}>
+          <p tw="font-worksans font-thin text-size_10x mt-5 leading-6 text-brand-gray-medium">
             Please sign in to get free <br />
             photo stock & create your collection
           </p>
-          <Button tw="mt-20 w-4/5">Google Sign In</Button>
+          <Button size="lg" tw="mt-20 w-4/5">Google Sign In</Button>
         </div>
         <div>
-          <p tw="font-worksans text-size_8x" css={css({ color: '#cccccc' })}>
-            Copyright <span css={[css({ color: '#e23e57' })]}>@happybaaga</span> 2022
+          <p tw="font-worksans text-size_8x text-brand-gray-medium">
+            Copyright <span tw="text-brand-red">@happybaaga</span> 2022
           </p>
         </div>
       </Wrapper>

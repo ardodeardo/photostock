@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import Layout from '../../components/shared/Layout';
 import ModalCategories from './components/ModalCategories';
 
+import { GoSearch } from 'react-icons/go';
+
 const Home = () => {
   const dataSet = [
     {
@@ -68,9 +70,10 @@ const Home = () => {
             </p>
 
             <SearchBox>
+              <GoSearch tw="block absolute left-4 top-1/2 transform -translate-y-1/2 text-brand-purple-light text-size_14x" />
               <input
                 type="text"
-                tw="w-full h-full pl-15 font-worksans text-black"
+                tw="w-full h-full pl-15 pr-5 font-worksans text-black"
                 // css={css({ color: '#cccccc' })}
                 placeholder="Search Image, illustration, and photo"
               />
@@ -81,7 +84,9 @@ const Home = () => {
                   <Link to={`categories/${item.title}`}>{item.title}</Link>
                 </List>
               ))}
-              <List tw="cursor-pointer" onClick={() => handleModalCategories()}>More Categories</List>
+              <List tw="cursor-pointer" onClick={() => handleModalCategories()}>
+                More Categories
+              </List>
             </ul>
           </Container>
         </SearchBoxArea>
@@ -109,10 +114,10 @@ const Home = () => {
         </Container>
       </section>
 
-      <section id="information" css={css({ backgroundColor: '#f8f8f8' })}>
+      <section id="information" tw="bg-brand-gray-light">
         <Container>
           <InnerContainer>
-            <div tw="py-10 text-center" css={css({ color: '#311d3f' })}>
+            <div tw="py-10 text-center text-brand-purple-medium">
               <h2 tw="font-montserrat font-semibold text-size_16x">Free Images</h2>
               <p tw="font-worksans text-size_10x mt-6">
                 PhotoStock is a vibrant community of creatives, sharing copyright free images,
@@ -139,7 +144,7 @@ const SearchBoxArea = styled.div(() => [
 ]);
 
 const SearchBox = styled.div(() => [
-  tw`mt-13 h-15 mx-auto overflow-hidden`,
+  tw`relative mt-13 h-15 mx-auto overflow-hidden`,
   css`
     width: 720px;
     border-radius: 48px;

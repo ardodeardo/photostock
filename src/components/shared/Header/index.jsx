@@ -15,18 +15,17 @@ const Header = (props) => {
   };
 
   return (
-    <header tw="py-6 fixed top-0 left-0 right-0 z-10" css={css({ backgroundColor: '#160d1c' })}>
+    <header tw="py-6 fixed top-0 left-0 right-0 z-10 bg-brand-purple-dark">
       <Container>
         <div tw="flex justify-between">
           <div tw="text-white font-montserrat text-size_16x font-thin">
             <Link to="/">
-              Photo<span css={[tw`font-bold`, css({ color: '#e23e57' })]}>Stock</span>
+              Photo<span tw="text-brand-red font-bold">Stock</span>
             </Link>
           </div>
           <div tw="relative flex items-center">
             <button
-              tw="cursor-pointer"
-              css={css({ color: '#cccccc' })}
+              tw="cursor-pointer text-brand-gray-medium"
               onClick={() => handleDropdown()}
             >
               Hi, <b tw="text-white">User</b>{' '}
